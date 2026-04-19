@@ -203,6 +203,23 @@ Rather than hardcoding three locations into one script, implemented a CLI argume
 
 ---
 
+## AI Tools Disclosure
+
+**Tool used:** Claude (Anthropic)
+
+**Purpose:** Guidance and code generation throughout the project
+
+**Extent of AI use:**
+- `sensor_simulator.py` — logic structure and data generation approach explained by AI; code written by me with AI guidance on specific methods (`random.uniform`, `linear interpolation`, `try/except` patterns)
+- Got AI assistance for front end code generation, explanation and debugging
+- `stream-analytics/query.sql` — structure guided by AI; bugs identified and fixed collaboratively
+- All READMEs — written by me with AI assistance
+- Architecture diagram .svg file was AI generated based off of my own knowledge and initial diagram understanding
+
+I understand the code in each file and can explain every part.
+
+---
+
 ## References
 
 - [Azure IoT Hub Python SDK](https://github.com/Azure/azure-iot-sdk-python)
@@ -216,5 +233,5 @@ Rather than hardcoding three locations into one script, implemented a CLI argume
 
 ## Video Demonstration
 
-[YouTube — Rideau Canal Monitoring System Demo](https://youtu.be/7odfKLzJmA4)
+[YouTube — Rideau Canal Monitoring System Demo](https://youtu.be/CFsOGfYbOq4)
 
