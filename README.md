@@ -232,6 +232,6 @@ I understand the code in each file and can explain every part.
 ---
 
 ## Video Demonstration
-
+Kindly note, I added the into of my name but it seems the recording cut it off, and the audio is not very high so please turn it up. Thank you!
 [YouTube — Rideau Canal Monitoring System Demo](https://youtu.be/CFsOGfYbOq4)
 
