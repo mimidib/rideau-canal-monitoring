@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" width="900" height="700" font-family="Segoe UI, system-ui, sans-serif">
+
+  <!-- Background -->
+  <rect width="900" height="700" fill="#111217"/>
+
+  <!-- Title -->
+  <text x="450" y="38" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="600">Rideau Canal Skateway — Real-Time Monitoring Architecture</text>
+
+  <!-- ══════════════════════════════════════════
+       ROW 1 — IoT Sensors (3 devices)
+  ══════════════════════════════════════════ -->
+  <text x="450" y="72" text-anchor="middle" fill="#8e9aab" font-size="10" letter-spacing="2">EDGE — SENSOR SIMULATION</text>
+
+  <rect x="55"  y="82" width="155" height="76" rx="6" fill="#1a1f2e" stroke="#3a6bc4" stroke-width="1.5"/>
+  <text x="132" y="106" text-anchor="middle" fill="#5794f2" font-size="10" font-weight="600">SENSOR DEVICE</text>
+  <text x="132" y="124" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Dow's Lake</text>
+  <text x="132" y="142" text-anchor="middle" fill="#8e9aab" font-size="10">Python · azure-iot-device</text>
+
+  <rect x="372" y="82" width="155" height="76" rx="6" fill="#1a1f2e" stroke="#3a6bc4" stroke-width="1.5"/>
+  <text x="449" y="106" text-anchor="middle" fill="#5794f2" font-size="10" font-weight="600">SENSOR DEVICE</text>
+  <text x="449" y="124" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Fifth Avenue</text>
+  <text x="449" y="142" text-anchor="middle" fill="#8e9aab" font-size="10">Python · azure-iot-device</text>
+
+  <rect x="689" y="82" width="155" height="76" rx="6" fill="#1a1f2e" stroke="#3a6bc4" stroke-width="1.5"/>
+  <text x="766" y="106" text-anchor="middle" fill="#5794f2" font-size="10" font-weight="600">SENSOR DEVICE</text>
+  <text x="766" y="124" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">NAC</text>
+  <text x="766" y="142" text-anchor="middle" fill="#8e9aab" font-size="10">Python · azure-iot-device</text>
+
+  <!-- ══════════════════════════════════════════
+       ROW 2 — IoT Hub
+  ══════════════════════════════════════════ -->
+  <text x="450" y="196" text-anchor="middle" fill="#8e9aab" font-size="10" letter-spacing="2">INGESTION</text>
+
+  <rect x="300" y="208" width="300" height="76" rx="6" fill="#1a2535" stroke="#0072c6" stroke-width="1.5"/>
+  <text x="450" y="232" text-anchor="middle" fill="#4da3e8" font-size="10" font-weight="600">AZURE IOT HUB</text>
+  <text x="450" y="252" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Rideau-IoT-Ingest</text>
+  <text x="450" y="270" text-anchor="middle" fill="#8e9aab" font-size="10">3 registered devices · MQTT · JSON · every 10s</text>
+
+  <!-- Arrows: sensors → IoT Hub -->
+  <line x1="155" y1="158" x2="365" y2="208" stroke="#3a6bc4" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ab)"/>
+  <line x1="449" y1="158" x2="449" y2="208" stroke="#3a6bc4" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ab)"/>
+  <line x1="743" y1="158" x2="535" y2="208" stroke="#3a6bc4" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#ab)"/>
+
+  <!-- ══════════════════════════════════════════
+       ROW 3 — Stream Analytics
+  ══════════════════════════════════════════ -->
+  <text x="450" y="328" text-anchor="middle" fill="#8e9aab" font-size="10" letter-spacing="2">PROCESSING</text>
+
+  <rect x="300" y="340" width="300" height="76" rx="6" fill="#1a2a1a" stroke="#107c10" stroke-width="1.5"/>
+  <text x="450" y="364" text-anchor="middle" fill="#73bf69" font-size="10" font-weight="600">AZURE STREAM ANALYTICS</text>
+  <text x="450" y="384" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">process-rideau-iot</text>
+  <text x="450" y="402" text-anchor="middle" fill="#8e9aab" font-size="10">5-min tumbling window · avg/min/max · safety status</text>
+
+  <!-- Arrow: IoT Hub → Stream Analytics -->
+  <line x1="450" y1="284" x2="450" y2="340" stroke="#0072c6" stroke-width="1.5" marker-end="url(#aa)"/>
+  <text x="458" y="316" fill="#8e9aab" font-size="9">stream input</text>
+
+  <!-- ══════════════════════════════════════════
+       ROW 4 — Cosmos DB + Blob Storage
+  ══════════════════════════════════════════ -->
+  <text x="450" y="462" text-anchor="middle" fill="#8e9aab" font-size="10" letter-spacing="2">STORAGE</text>
+
+  <rect x="100" y="474" width="240" height="76" rx="6" fill="#2a1a2a" stroke="#8a3ffc" stroke-width="1.5"/>
+  <text x="220" y="498" text-anchor="middle" fill="#b491f0" font-size="10" font-weight="600">AZURE COSMOS DB (NoSQL)</text>
+  <text x="220" y="518" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">RideauCanalDB</text>
+  <text x="220" y="536" text-anchor="middle" fill="#8e9aab" font-size="10">SensorAggregations · partitioned by /location</text>
+
+  <rect x="560" y="474" width="240" height="76" rx="6" fill="#1a2535" stroke="#0072c6" stroke-width="1.5"/>
+  <text x="680" y="498" text-anchor="middle" fill="#4da3e8" font-size="10" font-weight="600">AZURE BLOB STORAGE</text>
+  <text x="680" y="518" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">historicalacc</text>
+  <text x="680" y="536" text-anchor="middle" fill="#8e9aab" font-size="10">historical-sensor-aggregations · JSON</text>
+
+  <!-- Arrows: Stream Analytics → Cosmos + Blob -->
+  <line x1="400" y1="416" x2="268" y2="474" stroke="#107c10" stroke-width="1.5" marker-end="url(#ag)"/>
+  <line x1="500" y1="416" x2="632" y2="474" stroke="#107c10" stroke-width="1.5" marker-end="url(#ag)"/>
+  <text x="278" y="452" fill="#8e9aab" font-size="9">live output</text>
+  <text x="570" y="452" fill="#8e9aab" font-size="9">archive output</text>
+
+  <!-- ══════════════════════════════════════════
+       ROW 5 — Web Dashboard
+  ══════════════════════════════════════════ -->
+  <text x="450" y="600" text-anchor="middle" fill="#8e9aab" font-size="10" letter-spacing="2">DASHBOARD</text>
+
+  <rect x="300" y="612" width="300" height="76" rx="6" fill="#2a1f1a" stroke="#f4a261" stroke-width="1.5"/>
+  <text x="450" y="636" text-anchor="middle" fill="#f4a261" font-size="10" font-weight="600">AZURE APP SERVICE + NODE.JS</text>
+  <text x="450" y="656" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="600">Web Dashboard</text>
+  <text x="450" y="674" text-anchor="middle" fill="#8e9aab" font-size="10">Express · @azure/cosmos · Chart.js · auto-refresh 30s</text>
+
+  <!-- Arrow: Cosmos DB → Dashboard -->
+  <line x1="220" y1="550" x2="355" y2="612" stroke="#8a3ffc" stroke-width="1.5" marker-end="url(#ap)"/>
+  <text x="240" y="590" fill="#8e9aab" font-size="9">Cosmos SDK query</text>
+
+  <!-- ══════════════════════════════════════════
+       Arrowhead markers
+  ══════════════════════════════════════════ -->
+  <defs>
+    <marker id="ab" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3a6bc4"/>
+    </marker>
+    <marker id="aa" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0072c6"/>
+    </marker>
+    <marker id="ag" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#107c10"/>
+    </marker>
+    <marker id="ap" markerWidth="8" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#8a3ffc"/>
+    </marker>
+  </defs>
+
+</svg>
