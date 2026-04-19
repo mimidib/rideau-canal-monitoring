@@ -214,6 +214,7 @@ Rather than hardcoding three locations into one script, implemented a CLI argume
 - Got AI assistance for front end code generation, explanation and debugging
 - `stream-analytics/query.sql` — structure guided by AI; bugs identified and fixed collaboratively
 - All READMEs — written by me with AI assistance
+- Architecture diagram .svg file was AI generated based off of my own knowledge and initial diagram understanding
 
 I understand the code in each file and can explain every part.
 
